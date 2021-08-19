@@ -1,0 +1,4 @@
+#Wed Aug 11 11:32:41 NPT 2021
+base.0=/Users/pragyan.aryal/Desktop/WesionaryTeam/Learn/Front-end/learn_flutter/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
