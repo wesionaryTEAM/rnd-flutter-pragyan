@@ -38,7 +38,13 @@ class _MyAppState extends State<MyApp> {
             Column(
                 children: transactions.map((tx) {
               return Card(
-                child: Text(tx.title),
+                child: Row(
+                  children: [
+                    Container(
+                      child: Text(tx.amount.toString()),
+                    )
+                  ],
+                ),
               );
             }).toList()),
           ],
