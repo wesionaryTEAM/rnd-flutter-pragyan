@@ -1,5 +1,6 @@
-import 'package:complete_flutter/transaction.dart';
 import 'package:flutter/material.dart';
+
+import './widgets/user_transaction.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,11 +14,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final List<Transaction> transactions = [
-    Transaction(id: 't1', title: 'New Shoes', amount: 69.99, date: DateTime.now()),
-    Transaction(id: 't2', title: 'Weekly Groceries', amount: 16.53, date: DateTime.now())
-  ];
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,29 +21,22 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Complete App'),
         ),
-        body: Column(
-          children: [
-            Card(
-              color: Colors.lightBlue,
-              child: Container(
+        body: SingleChildScrollView(
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
                 width: double.infinity,
-                child: Text('Chart'),
-              ),
-              elevation: 5,
-            ),
-            Column(
-                children: transactions.map((tx) {
-              return Card(
-                child: Row(
-                  children: [
-                    Container(
-                      child: Text(tx.amount.toString()),
-                    )
-                  ],
+                child: Card(
+                  color: Colors.lightBlue,
+                  child: Text('Chart'),
+                  elevation: 5,
                 ),
-              );
-            }).toList()),
-          ],
+              ),
+              UserTransactions()
+            ],
+          ),
         ),
       ),
     );
